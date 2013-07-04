@@ -7,14 +7,25 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewControllerViewController.h"
+#import "TableViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize navController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //RootViewControllerViewController* rootViewC = [[RootViewControllerViewController alloc] initWithStyle: UITableViewStylePlain];
+    TableViewController* rootViewC = [[TableViewController alloc] init];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:rootViewC];
+    
+    [self.window addSubview:self.navController.view];
+
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
