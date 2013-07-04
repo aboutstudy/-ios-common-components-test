@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RootViewControllerViewController.h"
 #import "TableViewController.h"
+#import "LoginController.h"
 
 @implementation AppDelegate
 
@@ -20,8 +21,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     //RootViewControllerViewController* rootViewC = [[RootViewControllerViewController alloc] initWithStyle: UITableViewStylePlain];
-    TableViewController* rootViewC = [[TableViewController alloc] init];
-    self.navController = [[UINavigationController alloc] initWithRootViewController:rootViewC];
+    
+    if(NO)
+    {
+        TableViewController* rootViewC = [[TableViewController alloc] init];
+        self.navController = [[UINavigationController alloc] initWithRootViewController:rootViewC];        
+    }
+    else {
+        LoginController* loginC = [[LoginController alloc] initWithNibName:@"LoginController" bundle:nil];
+        self.navController = [[UINavigationController alloc] initWithRootViewController:loginC];
+    }
     
     [self.window addSubview:self.navController.view];
 

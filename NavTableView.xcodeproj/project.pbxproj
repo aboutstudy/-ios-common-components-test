@@ -48,6 +48,8 @@
 		625617841779D87A00D4F287 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 625617821779D87A00D4F287 /* TableViewController.xib */; };
 		6256178D1779E0EE00D4F287 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6256178B1779E0EE00D4F287 /* DetailViewController.m */; };
 		6256178E1779E0EE00D4F287 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6256178C1779E0EE00D4F287 /* DetailViewController.xib */; };
+		627977801785B7B4003EA967 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6279777E1785B7B4003EA967 /* LoginController.m */; };
+		627977811785B7B4003EA967 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6279777F1785B7B4003EA967 /* LoginController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +131,9 @@
 		6256178A1779E0EE00D4F287 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6256178B1779E0EE00D4F287 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6256178C1779E0EE00D4F287 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		6279777D1785B7B4003EA967 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = User/LoginController.h; sourceTree = "<group>"; };
+		6279777E1785B7B4003EA967 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = User/LoginController.m; sourceTree = "<group>"; };
+		6279777F1785B7B4003EA967 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginController.xib; path = User/LoginController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +299,7 @@
 		6253F4171775E86D00718092 /* NavTableView */ = {
 			isa = PBXGroup;
 			children = (
+				6279777B1785B6C9003EA967 /* User */,
 				621095BC177C72F100384561 /* RSS */,
 				6253F4201775E86D00718092 /* AppDelegate.h */,
 				6253F4211775E86D00718092 /* AppDelegate.m */,
@@ -319,6 +325,16 @@
 				6253F41F1775E86D00718092 /* NavTableView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6279777B1785B6C9003EA967 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6279777D1785B7B4003EA967 /* LoginController.h */,
+				6279777E1785B7B4003EA967 /* LoginController.m */,
+				6279777F1785B7B4003EA967 /* LoginController.xib */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +391,7 @@
 				625617841779D87A00D4F287 /* TableViewController.xib in Resources */,
 				6256178E1779E0EE00D4F287 /* DetailViewController.xib in Resources */,
 				621095BA177C72D900384561 /* RssMainController.xib in Resources */,
+				627977811785B7B4003EA967 /* LoginController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +432,7 @@
 				62109625177C7AF600384561 /* ASIS3ServiceRequest.m in Sources */,
 				62109638177C800200384561 /* Reachability.m in Sources */,
 				62109644177C843700384561 /* JSONKit.m in Sources */,
+				627977801785B7B4003EA967 /* LoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
