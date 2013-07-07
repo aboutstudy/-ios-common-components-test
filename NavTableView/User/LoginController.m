@@ -36,6 +36,10 @@
 - (void)viewDidUnload
 {
     [self setDoSubmit:nil];
+    [username release];
+    username = nil;
+    [password release];
+    password = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -48,11 +52,16 @@
 
 - (void)dealloc {
     [doSubmit release];
+    [username release];
+    [password release];
     [super dealloc];
 }
 
 - (IBAction)doLogin:(id)sender {
-    NSURL* loginApi = [NSURL URLWithString:@"http://readlist/api/login.json?username=test&password=123456"];
+    NSString* strURL = [[NSString alloc] initWithFormat:@"http://readlist/api/login.json?username=%@&password=%@", [username.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], password.text];
+    //NSURL* loginApi = [NSURL URLWithString:@"http://readlist/api/login.json?username=test&password=123456"];
+    NSLog(@"strURL:%@", strURL);
+    NSURL* loginApi = [NSURL URLWithString:strURL];
     ASIHTTPRequest* _request = [ASIHTTPRequest requestWithURL:loginApi];
     [_request setDelegate:self];
     [_request startAsynchronous];
@@ -69,6 +78,7 @@
     NSLog(@"status:%@", status);
           
     if ([status isEqualToNumber:[NSNumber numberWithInt:200]]) {
+        NSLog(@"tokenid:%@", [arrResponse valueForKey:@"access_token"]);
         TableViewController* rootViewC = [[TableViewController alloc] init];
         [self.navigationController pushViewController:rootViewC animated:YES];        
     }
@@ -82,6 +92,13 @@
 - (void)requestFailed:(ASIHTTPRequest*)request
 {
     NSError* error = [request error];
+}
+
+//关闭键盘
+- (IBAction)textFieldExitEditing:(id)sender
+{
+    [username resignFirstResponder];
+    [password resignFirstResponder];
 }
 
 @end

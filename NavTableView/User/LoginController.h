@@ -11,8 +11,10 @@
 @interface LoginController : UIViewController
 {
     BOOL* isValidUser;
+    IBOutlet UITextField *username;
+    IBOutlet UITextField *password;
 }
 @property (retain, nonatomic) IBOutlet UIButton *doSubmit;
 - (IBAction)doLogin:(id)sender;
-
+- (IBAction)textFieldExitEditing:(id)sender;
 @end
